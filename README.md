@@ -39,7 +39,28 @@ to your class:
   public interface MyProxy extends ProxyPlace<MyPresenter> {}
 ```
 
+##Goals
+his summarizes the goal of GWTP: to offer a simple to use MVP architecture with minimal boilerplate, without sacrificing GWT's best features. Here are some of the features currently supported by GWTP:
 
+* Dependency injection through GIN and Guice;
+* Simple but powerful history management mechanism;
+* Support for nested presenters;
+* Lazy instantiation for presenter and view;
+* Effortless and efficient code splitting;
+* Integrated command pattern supporting undo/redo;
+* Plus other cool PlannedFeatures soon!
+
+##Features
+Moreover, GWTP strives to use the event bus in a clear and efficient way. Events are used to decouple loosely related objects, while direct method invocation is used to clarify the program flow between strongly coupled components. The result is an application that is easy to understand and that can grow with time.
+
+In addition, GWTP offers components that let you:
+
+* Efficiently implement a Command pattern in your application ;
+* Organize your internationalization strings ;
+* Use annotation processors to generate event, actions & responses, and DTOs ;
+* Easily support search-engine crawling on your GWT application (in development);
+* Simplify and clean-up testing code when using GIN and Guice.
+* To learn more about these components, check out the LibraryOverview.
 
 ##Thanks to
 <a href="http://www.jetbrains.com/idea/features/html_css_editor.html" style="display:block; background:#0d3a9e url(http://www.jetbrains.com/idea/opensource/img/all/banners/idea468x60_blue.gif) no-repeat 10px 50%; border:solid 1px #0d3a9e; margin:0;padding:0;text-decoration:none;text-indent:0;letter-spacing:-0.001em; width:466px; height:58px" alt="Smart Java IDE. Web development ready. Neat HTML and CSS refactorings and more" title="Smart Java IDE. Web development ready. Neat HTML and CSS refactorings and more"><span style="margin: 5px 0 0 52px;padding: 0;float: left;font-size: 12px;cursor:pointer;  background-image:none;border:0;color: #acc4f9; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Can't code without</span><span style="margin:0 0 0 205px;padding:18px 0 2px 0; line-height:13px;font-size:12px;cursor:pointer;  background-image:none;border:0;display:block; width:255px; color: #acc4f9; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Smart Java IDE. Web development ready. <br/>Neat HTML and CSS refactorings and more</span></a>
