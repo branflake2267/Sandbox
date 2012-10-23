@@ -2,7 +2,7 @@
 A complete model-view-presenter framework to simplify your next GWT project.
 
 ##New Home for GWTP
-While we move you can find the documentation here:
+While we move, you can find the documentation here:
 http://gwt-platform.googlecode.com
 
 ##News
