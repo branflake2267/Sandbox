@@ -6,7 +6,7 @@ While we move you can find the documentation here:
 http://gwt-platform.googlecode.com
 
 ##News
-10/23/2012 - GWTP starts moving more to GitHub
+10/23/2012 - GWTP starts moving more to GitHub, getting ready to push out 0.8 release.
 
 02/01/2012 - GWTP 0.7 released with support for fancier tab with user-controlled data. Get it from the download section or Maven central. See the Release Notes and the migration details.
 
