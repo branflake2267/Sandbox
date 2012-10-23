@@ -1,7 +1,8 @@
 #GWTP
 A complete model-view-presenter framework to simplify your next GWT project.
 
-Git hub is the new source home - While we move you can find the documentation here:
+#New GWTP Home
+While we move you can find the documentation here:
 http://gwt-platform.googlecode.com
 
 ##Plugins
