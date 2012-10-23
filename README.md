@@ -1,4 +1,4 @@
-##GWTP
+#GWTP
 A complete model-view-presenter framework to simplify your next GWT project.
 
 ##New Home for GWTP
@@ -6,6 +6,8 @@ While we move you can find the documentation here:
 http://gwt-platform.googlecode.com
 
 ##News
+10/23/2012 - GWTP starts moving more to GitHub
+
 02/01/2012 - GWTP 0.7 released with support for fancier tab with user-controlled data. Get it from the download section or Maven central. See the Release Notes and the migration details.
 
 06/15/2011 - The slides for my PrairieDevCon 2011 talk on AppEngine are available here, the ones for my GWT & GWTP dojo are here, and you can get the accompanying project.
