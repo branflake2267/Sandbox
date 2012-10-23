@@ -51,7 +51,9 @@ his summarizes the goal of GWTP: to offer a simple to use MVP architecture with 
 * Plus other cool PlannedFeatures soon!
 
 ##Features
-Moreover, GWTP strives to use the event bus in a clear and efficient way. Events are used to decouple loosely related objects, while direct method invocation is used to clarify the program flow between strongly coupled components. The result is an application that is easy to understand and that can grow with time.
+Moreover, GWTP strives to use the event bus in a clear and efficient way. Events are used to decouple loosely 
+related objects, while direct method invocation is used to clarify the program flow between strongly coupled 
+components. The result is an application that is easy to understand and that can grow with time.
 
 In addition, GWTP offers components that let you:
 
@@ -61,6 +63,16 @@ In addition, GWTP offers components that let you:
 * Easily support search-engine crawling on your GWT application (in development);
 * Simplify and clean-up testing code when using GIN and Guice.
 * To learn more about these components, check out the LibraryOverview.
+
+##Notes
+See the GettingStarted page for details. You can also get plenty of support from developers and fellow users 
+in the Forum, cheer for us on ohloh, or follow us on Twitter @PhilBeaudoin and @ArcBees!
+
+GWTP is a fork of gwt-dispatch and gwt-presenter, many thanks to the original authors of these packages. If you're 
+used to gwt-presenter, you might like to see how it compares to GWTP or read what Andreas Borglin says about switching.
+GWTP is actively used in various projects, including the open source PuzzleBazar and large-scale commercial products.
+If you like this project and would like to contribute, send an email to philippe.beaudoin@gmail.com. You can also take 
+a look at good starting issues for new contributors. In all cases, join the discussion.
 
 ##Thanks to
 <a href="http://www.jetbrains.com/idea/features/html_css_editor.html" style="display:block; background:#0d3a9e url(http://www.jetbrains.com/idea/opensource/img/all/banners/idea468x60_blue.gif) no-repeat 10px 50%; border:solid 1px #0d3a9e; margin:0;padding:0;text-decoration:none;text-indent:0;letter-spacing:-0.001em; width:466px; height:58px" alt="Smart Java IDE. Web development ready. Neat HTML and CSS refactorings and more" title="Smart Java IDE. Web development ready. Neat HTML and CSS refactorings and more"><span style="margin: 5px 0 0 52px;padding: 0;float: left;font-size: 12px;cursor:pointer;  background-image:none;border:0;color: #acc4f9; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Can't code without</span><span style="margin:0 0 0 205px;padding:18px 0 2px 0; line-height:13px;font-size:12px;cursor:pointer;  background-image:none;border:0;display:block; width:255px; color: #acc4f9; font-family: trebuchet ms,arial,sans-serif;font-weight: normal;text-align:left;">Smart Java IDE. Web development ready. <br/>Neat HTML and CSS refactorings and more</span></a>
