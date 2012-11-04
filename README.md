@@ -1,1 +1,1 @@
-##[![GWTP](http://i.imgur.com/LHvTZ.png)]
+##[GWTP](http://i.imgur.com/LHvTZ.png)
