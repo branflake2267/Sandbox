@@ -1,1 +1,1 @@
-# [logo]: http://i.imgur.com/LHvTZ.png "GWTP goo-teepee"
+http://i.imgur.com/LHvTZ.png "GWTP goo-teepee"
