@@ -1,1 +1,1 @@
-![GWTP] (http://i.imgur.com/LHvTZ.png "GWTP goo-teepee") `goo-teepee`
+![GWTP] (http://i.imgur.com/LHvTZ.png "GWTP goo-teepee") *goo-teepee*
