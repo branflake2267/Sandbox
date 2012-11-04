@@ -1,1 +1,1 @@
-##(http://i.imgur.com/LHvTZ.png)
+##[(http://i.imgur.com/LHvTZ.png)]
