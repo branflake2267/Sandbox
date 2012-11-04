@@ -1,1 +1,1 @@
-http://i.imgur.com/LHvTZ.png "GWTP goo-teepee"
+![GWTP] (http://i.imgur.com/LHvTZ.png "GWTP goo-teepee")
