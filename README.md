@@ -14,7 +14,7 @@ A complete model-view-presenter framework to simplify your next GWT project.
 ##Plugins
 * [Eclipse Plugin source](https://github.com/ArcBees/gwtp-eclipse-plugin)
 
-##Moving
+##Moving From 
 * While we move, you can find the documentation here: http://gwt-platform.googlecode.com
 
 ##Thanks to
