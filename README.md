@@ -2,7 +2,7 @@
 
 A complete model-view-presenter framework to simplify your next GWT project.
 
-#Find More on [GWTP Wiki](https://github.com/ArcBees/GWTP/wiki)
+#Find More on [GWTP Wiki Home](https://github.com/ArcBees/GWTP/wiki)
 
 ##License
 GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
