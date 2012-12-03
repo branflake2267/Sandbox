@@ -8,7 +8,8 @@ A complete model-view-presenter framework to simplify your next GWT project.
 GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ##Downloads
-[Using Maven with GWTP](Using-Gwtp-with-Maven)
+[Maven Usage](https://github.com/ArcBees/GWTP/wiki/Using-Gwtp-with-Maven)
+[Download Jars](https://github.com/ArcBees/GWTP/downloads)
 
 ##Plugins
 [Eclipse Plugin source](https://github.com/ArcBees/gwtp-eclipse-plugin)
