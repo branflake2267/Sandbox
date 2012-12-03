@@ -2,7 +2,8 @@
 
 A complete model-view-presenter framework to simplify your next GWT project.
 
-#[Home](https://github.com/ArcBees/GWTP/wiki)
+#About
+#[Wiki Home](https://github.com/ArcBees/GWTP/wiki)
 
 ##New Home for GWTP
 While we move, you can find the documentation here:
