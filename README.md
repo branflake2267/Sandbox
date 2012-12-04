@@ -19,8 +19,8 @@ A complete model-view-presenter framework to simplify your next GWT project.
   </tr>
   <tr>
     <th>Basic</th>
-    <td>[AppEngine Demo](http://gwtp-sample-basic.appspot.com)</td>
-    <td>[Source](https://github.com/ArcBees/GWTP/tree/master/gwtp-samples/gwtp-sample-basic)</td>
+    <td><a href="http://gwtp-sample-basic.appspot.com">AppEngine Demo</a></td>
+    <td><a href="https://github.com/ArcBees/GWTP/tree/master/gwtp-samples/gwtp-sample-basic">Source</a></td>
   </tr>
 </table>
 
