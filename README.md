@@ -6,7 +6,7 @@
     <th>Plugin</th>
   </tr>
   <tr>
-    <td> https://github.com/ArcBees/ArcBees-GQuery-Plugins/tree/master/tooltip </td>
+    <td> [Test](http://google.com) </td>
   </tr>
 </table>
 
