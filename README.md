@@ -9,7 +9,7 @@
 * GWTP is freely distributable under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 ##Create Project
-To create a GWTP basic App Engine project change the groupId and artifactId. 
+* To create a GWTP basic App Engine project change the groupId and artifactId. 
 
   ```
   mvn archetype:generate -DarchetypeGroupId=com.arcbees \
