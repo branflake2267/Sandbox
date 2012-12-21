@@ -60,6 +60,7 @@ A complete model-view-presenter framework to simplify your next GWT project.
 
 ##Archetype Tools
 * [More about Archetype Project Creation](https://github.com/ArcBees/ArcBees-tools)
+
 ```
 mvn archetype:generate -DarchetypeGroupId=com.arcbees \
 -DarchetypeArtifactId=gwtp-basic-appengine-archetype \
