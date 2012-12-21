@@ -42,7 +42,7 @@
 </table>
 
 ##Archetype Tools
-* [More about Archetype Project Creation](https://github.com/ArcBees/ArcBees-tools)
+[More about Archetype Project Creation](https://github.com/ArcBees/ArcBees-tools)
 
 ```
 mvn archetype:generate -DarchetypeGroupId=com.arcbees \
@@ -54,7 +54,7 @@ mvn archetype:generate -DarchetypeGroupId=com.arcbees \
 ```
 
 ##Current Release
-* .8
+.8
 
 ##Thanks to
 [![Arcbees.com](http://arcbees-ads.appspot.com/images/1.png)](http://arcbees.com)
