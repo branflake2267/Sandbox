@@ -9,7 +9,7 @@
 ##ArcheTypes in this Project
 <table>
 	<tr>
-		<Th.>Archetype</th>
+		<th>Archetype</th>
 		<th>Description</th>
 	</tr>
 	<tr>
