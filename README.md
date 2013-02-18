@@ -7,8 +7,8 @@ The Team has managed to produce the next version of the maven-gae-plugin.
   <thead>
     <tr><th>maven-gae-plugin</th><th>gae-runtime</th></tr>
   </thead>
-  <tbody style="vertical-align:top">
-    <tr style="vertical-align:top">
+  <tbody>
+    <tr>
     <td>
     <ul>
        <li>Version 0.9.6</li>
@@ -32,7 +32,7 @@ The Team has managed to produce the next version of the maven-gae-plugin.
     </ul>
     ...
     </td>
-    <td>
+    <td valign="top">
     <ul>
        <li>Version 1.7.5</li>
        <li>Version 1.7.4</li>
