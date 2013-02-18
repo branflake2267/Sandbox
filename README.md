@@ -9,48 +9,52 @@ The Team has managed to produce the next version of the maven-gae-plugin.
   </thead>
   <tbody style="vertical-align:top">
     <tr style="vertical-align:top">
-      <td><ul>
- <li>Version 0.9.6</li>
- <li>Version 0.9.5</li>
- <li>Version 0.9.4<br/>
-   Supports a way of adding arbitrary flags.</li>
- <li>Version 0.9.3<br/>
-   Support for --application argument</li>
- <li>Version 0.9.2<br/>
-   Code moved to github.</li>
- <li>Version 0.9.1<br/>
-   Adds update-dos goal (issue 145).<br/>
-   Fixes long standing cron goal issue (issue 117).</li>
- <li>Version 0.9.0<br/>
-   Adds Backends Support (issue 135).</li>
- <li>Version 0.8.4<br/>
-   Updates to some used maven plugins<br/>
-   Fix to the way sourceEncoding is done (issue 120).</li>
- <li>Version 0.8.2<br/>
-   Minor bug fixes.</li></ul>
-...
-</td>
-<td><ul>
- <li>Version 1.7.5</li>
- <li>Version 1.7.4</li>
- <li>Version 1.7.0<br/>
-   Targets Google App Engine 1.7.0<br/>
-   Updates the datanucleus-appengine dependency to 2.0.1.1</li>
- <li>Version 1.6.4<br/>
-   Targets Google App Engine 1.6.4</li>
- <li>Version 1.6.3<br/>
-   Targets Google App Engine 1.6.3</li>
- <li>Version 1.6.2.1<br/>
-   Targets Google App Engine 1.6.2.1</li>
- <li>Version 1.6.1.1<br/>
-   Targets Google App Engine 1.6.1.1</li>
- <li>Version 1.6.1<br/>
-   Targets Google App Engine 1.6.1</li>
- <li>Version 1.6.0<br/>
-   Targets Google App Engine 1.6.0</li>
-</ul></td>
-</tr>
-</tbody>
+    <td>
+    <ul>
+       <li>Version 0.9.6</li>
+       <li>Version 0.9.5</li>
+       <li>Version 0.9.4<br/>
+         Supports a way of adding arbitrary flags.</li>
+       <li>Version 0.9.3<br/>
+         Support for --application argument</li>
+       <li>Version 0.9.2<br/>
+         Code moved to github.</li>
+       <li>Version 0.9.1<br/>
+         Adds update-dos goal (issue 145).<br/>
+         Fixes long standing cron goal issue (issue 117).</li>
+       <li>Version 0.9.0<br/>
+         Adds Backends Support (issue 135).</li>
+       <li>Version 0.8.4<br/>
+         Updates to some used maven plugins<br/>
+         Fix to the way sourceEncoding is done (issue 120).</li>
+       <li>Version 0.8.2<br/>
+         Minor bug fixes.</li>
+    </ul>
+    ...
+    </td>
+    <td>
+    <ul>
+       <li>Version 1.7.5</li>
+       <li>Version 1.7.4</li>
+       <li>Version 1.7.0<br/>
+         Targets Google App Engine 1.7.0<br/>
+         Updates the datanucleus-appengine dependency to 2.0.1.1</li>
+       <li>Version 1.6.4<br/>
+         Targets Google App Engine 1.6.4</li>
+       <li>Version 1.6.3<br/>
+         Targets Google App Engine 1.6.3</li>
+       <li>Version 1.6.2.1<br/>
+         Targets Google App Engine 1.6.2.1</li>
+       <li>Version 1.6.1.1<br/>
+         Targets Google App Engine 1.6.1.1</li>
+       <li>Version 1.6.1<br/>
+         Targets Google App Engine 1.6.1</li>
+       <li>Version 1.6.0<br/>
+         Targets Google App Engine 1.6.0</li>
+      </ul>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 
