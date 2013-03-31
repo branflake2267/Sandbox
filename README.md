@@ -70,118 +70,118 @@ Issues are tracked in [github](https://github.com/maven-gae-plugin/maven-gae-plu
 
 * How to setup the plugin with any Google App Engine Version 
 
-```xml
-<properties>
-    <!-- GAE Plugin -->
-    <gae.version>1.7.6</gae.version>
-    <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-    <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
-</properties>
-
-<plugin>
-    <groupId>net.kindleit</groupId>
-    <artifactId>maven-gae-plugin</artifactId>
-    <version>9.5</version>
-    <configuration>
-        <unpackVersion>${gae.version}</unpackVersion>
-        <serverId>appengine.google.com</serverId>
-        <appDir>${webappDirectory}</appDir>
-        
-        <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
-        <serverId>appengine-credentials</serverId>
-        <splitJars>true</splitJars>
-    </configuration>
-    <dependencies>
-        <!-- Google App Engine API -->
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-api-1.0-sdk</artifactId>
-            <version>${gae.version}</version>
-        </dependency>
-        <!-- Google App Engine Runtime Dependencies -->
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-jta_1.1_spec</artifactId>
-            <version>1.1.1</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-jpa_3.0_spec</artifactId>
-            <version>1.1.1</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.jdo</groupId>
-            <artifactId>jdo2-api</artifactId>
-            <version>2.3-eb</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-core</artifactId>
-            <version>1.1.5</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.appengine.orm</groupId>
-            <artifactId>datanucleus-appengine</artifactId>
-            <version>1.0.10</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.datanucleus</groupId>
-            <artifactId>datanucleus-jpa</artifactId>
-            <version>1.1.5</version>
-            <scope>runtime</scope>
-        </dependency>
-        <!-- App Engine Runtime Dependencies -->
-        <dependency>
-            <groupId>com.google.appengine</groupId>
-            <artifactId>appengine-tools-sdk</artifactId>
-            <version>${gae.version}</version>
-        </dependency>
-    </dependencies>
-</plugin>
-```
+  ```xml
+  <properties>
+      <!-- GAE Plugin -->
+      <gae.version>1.7.6</gae.version>
+      <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+      <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
+  </properties>
+  
+  <plugin>
+      <groupId>net.kindleit</groupId>
+      <artifactId>maven-gae-plugin</artifactId>
+      <version>9.5</version>
+      <configuration>
+          <unpackVersion>${gae.version}</unpackVersion>
+          <serverId>appengine.google.com</serverId>
+          <appDir>${webappDirectory}</appDir>
+          
+          <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+          <serverId>appengine-credentials</serverId>
+          <splitJars>true</splitJars>
+      </configuration>
+      <dependencies>
+          <!-- Google App Engine API -->
+          <dependency>
+              <groupId>com.google.appengine</groupId>
+              <artifactId>appengine-api-1.0-sdk</artifactId>
+              <version>${gae.version}</version>
+          </dependency>
+          <!-- Google App Engine Runtime Dependencies -->
+          <dependency>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-jta_1.1_spec</artifactId>
+              <version>1.1.1</version>
+              <scope>runtime</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.geronimo.specs</groupId>
+              <artifactId>geronimo-jpa_3.0_spec</artifactId>
+              <version>1.1.1</version>
+              <scope>runtime</scope>
+          </dependency>
+          <dependency>
+              <groupId>javax.jdo</groupId>
+              <artifactId>jdo2-api</artifactId>
+              <version>2.3-eb</version>
+              <scope>runtime</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.datanucleus</groupId>
+              <artifactId>datanucleus-core</artifactId>
+              <version>1.1.5</version>
+          </dependency>
+          <dependency>
+              <groupId>com.google.appengine.orm</groupId>
+              <artifactId>datanucleus-appengine</artifactId>
+              <version>1.0.10</version>
+              <scope>runtime</scope>
+          </dependency>
+          <dependency>
+              <groupId>org.datanucleus</groupId>
+              <artifactId>datanucleus-jpa</artifactId>
+              <version>1.1.5</version>
+              <scope>runtime</scope>
+          </dependency>
+          <!-- App Engine Runtime Dependencies -->
+          <dependency>
+              <groupId>com.google.appengine</groupId>
+              <artifactId>appengine-tools-sdk</artifactId>
+              <version>${gae.version}</version>
+          </dependency>
+      </dependencies>
+  </plugin>
+  ```
 
 * How to setup the plugin using this maven plugin GAE runtime.  
 
-```xml
-<properties>
-     <gae.version>1.7.6</gae.version>
-     <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-     <gae.home>
-         ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}
-     </gae.home>
-<propertiess>
-
-<plugin>
-    <groupId>net.kindleit</groupId>
-    <artifactId>maven-gae-plugin</artifactId>
-    <version>0.9.5</version>
-    <configuration>
-        <sdkDir>${gae.home}</sdkDir>
-            <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
-            <serverId>appengine-credentials</serverId>
-            <splitJars>true</splitJars>
-        </configuration>
-        <executions>
-            <execution>
-                <id>install-server-jar</id>
-                <phase>validate</phase>
-                <goals>
-                    <goal>unpack</goal>
-                </goals>
-            </execution>
-            <execution>
-                <id>deploy</id>
-                <goals>
-                    <goal>deploy</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
-```
+  ```xml
+  <properties>
+       <gae.version>1.7.6</gae.version>
+       <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+       <gae.home>
+           ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}
+       </gae.home>
+  <propertiess>
+  
+  <plugin>
+      <groupId>net.kindleit</groupId>
+      <artifactId>maven-gae-plugin</artifactId>
+      <version>0.9.5</version>
+      <configuration>
+          <sdkDir>${gae.home}</sdkDir>
+              <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
+              <serverId>appengine-credentials</serverId>
+              <splitJars>true</splitJars>
+          </configuration>
+          <executions>
+              <execution>
+                  <id>install-server-jar</id>
+                  <phase>validate</phase>
+                  <goals>
+                      <goal>unpack</goal>
+                  </goals>
+              </execution>
+              <execution>
+                  <id>deploy</id>
+                  <goals>
+                      <goal>deploy</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+  ```
 
 ##Boilerplate / Archetypes
 [JAppStart](http://code.google.com/p/jappstart) is a very complete jump start for java GAE developers. [Spring Roo](http://www.springsource.org/roo) is also a great tool for setting up all the boilerplate code.
