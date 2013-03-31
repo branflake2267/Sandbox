@@ -57,7 +57,7 @@
 </table>
 
 
-##Maven Plugin Configuration
+##Maven Configuration
 
 * How to setup the plugin with any Google App Engine Version 
 
