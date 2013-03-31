@@ -57,14 +57,6 @@ The Team has managed to produce the next version of the maven-gae-plugin.
 </table>
 
 
-##Maven Generated site information
-You can find a copy of the maven generated site information [here](http://www.kindleit.net/maven_gae_plugin/) and [here](http://maven-gae-plugin.github.com/maven-gae-plugin/).
-
-
-##Issues
-Issues are tracked in [github](https://github.com/maven-gae-plugin/maven-gae-plugin/issues).
-
-
 ##Maven Plugin Configuration
 
 * How to setup the plugin with any Google App Engine Version 
@@ -182,6 +174,11 @@ Issues are tracked in [github](https://github.com/maven-gae-plugin/maven-gae-plu
       </plugin>
   ```
 
+
+##Maven Generated site information
+You can find a copy of the maven generated site information [here](http://www.kindleit.net/maven_gae_plugin/) and [here](http://maven-gae-plugin.github.com/maven-gae-plugin/).
+
+
 ##Boilerplate / Archetypes
 [JAppStart](http://code.google.com/p/jappstart) is a very complete jump start for java GAE developers. [Spring Roo](http://www.springsource.org/roo) is also a great tool for setting up all the boilerplate code.
 
@@ -207,3 +204,6 @@ You can also find the following archetypes for your applications:
         mvn archetype:generate -DarchetypeGroupId=net.kindleit -DarchetypeArtifactId=gae-archetype-jsf \
         -DarchetypeVersion=0.9.4 -DgroupId=com.myapp.test -DartifactId=testapp
 
+
+##Issues
+Issues are tracked in [github](https://github.com/maven-gae-plugin/maven-gae-plugin/issues).
