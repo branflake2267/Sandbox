@@ -32,7 +32,7 @@
     </td>
     <td valign="top">
     <ul>
-       <li>Any Version See Configuration Below</li>
+       <li><b>Any</b> Version See Configuration Below</li>
        <li>Version 1.7.5</li>
        <li>Version 1.7.4</li>
        <li>Version 1.7.0<br/>
