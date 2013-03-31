@@ -11,7 +11,6 @@ The Team has managed to produce the next version of the maven-gae-plugin.
     <tr>
     <td valign="top">
     <ul>
-       <li>Version 0.9.6</li>
        <li>Version 0.9.5</li>
        <li>Version 0.9.4<br/>
          Supports a way of adding arbitrary flags.</li>
@@ -33,7 +32,7 @@ The Team has managed to produce the next version of the maven-gae-plugin.
     </td>
     <td valign="top">
     <ul>
-       <li>Version 1.7.6</li>
+       <li>Any Version See Configuration Below</li>
        <li>Version 1.7.5</li>
        <li>Version 1.7.4</li>
        <li>Version 1.7.0<br/>
