@@ -1,7 +1,7 @@
 #Maven GAE Plugin
 
-##Google Project Page
-The Team has managed to produce the next version of the maven-gae-plugin. 
+##Versions
+`maven-gae-plugin` released versions.  
 
 <table>
   <thead>
