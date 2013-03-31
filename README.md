@@ -59,7 +59,7 @@
 
 ##Maven Configuration
 
-* How to setup the plugin with any Google App Engine Version 
+* How to setup the plugin with *any* Google App Engine version.
 
   ```xml
   <properties>
