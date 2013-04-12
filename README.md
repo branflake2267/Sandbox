@@ -1,209 +1,317 @@
-#Maven GAE Plugin
+#XTemplates
+A tag interface for declaring methods that accept objects and convert them into HTML based on an associated template.
+Methods return SafeHtml instances which can be used in many GWT and GXT widgets to render content. 
 
-##Versions
-`maven-gae-plugin` released versions.  
+##Features
+XTemplates support a variety of features to make it easy to generate content, including:
 
-<table>
-  <thead>
-    <tr><th>maven-gae-plugin</th><th>gae-runtime</th></tr>
-  </thead>
-  <tbody>
-    <tr>
-    <td valign="top">
-    <ul>
-       <li>Version 0.9.5</li>
-       <li>Version 0.9.4<br/>
-         Supports a way of adding arbitrary flags.</li>
-       <li>Version 0.9.3<br/>
-         Support for --application argument</li>
-       <li>Version 0.9.2<br/>
-         Code moved to github.</li>
-       <li>Version 0.9.1<br/>
-         Adds update-dos goal (issue 145).<br/>
-         Fixes long standing cron goal issue (issue 117).</li>
-       <li>Version 0.9.0<br/>
-         Adds Backends Support (issue 135).</li>
-       <li>Version 0.8.4<br/>
-         Updates to some used maven plugins<br/>
-         Fix to the way sourceEncoding is done (issue 120).</li>
-       <li>Version 0.8.2<br/>
-         Minor bug fixes.</li>
-    </ul>
-    </td>
-    <td valign="top">
-    <ul>
-       <li><b>Any</b> Version See Configuration Below</li>
-       <li>Version 1.7.5</li>
-       <li>Version 1.7.4</li>
-       <li>Version 1.7.0<br/>
-         Targets Google App Engine 1.7.0<br/>
-         Updates the datanucleus-appengine dependency to 2.0.1.1</li>
-       <li>Version 1.6.4<br/>
-         Targets Google App Engine 1.6.4</li>
-       <li>Version 1.6.3<br/>
-         Targets Google App Engine 1.6.3</li>
-       <li>Version 1.6.2.1<br/>
-         Targets Google App Engine 1.6.2.1</li>
-       <li>Version 1.6.1.1<br/>
-         Targets Google App Engine 1.6.1.1</li>
-       <li>Version 1.6.1<br/>
-         Targets Google App Engine 1.6.1</li>
-       <li>Version 1.6.0<br/>
-         Targets Google App Engine 1.6.0</li>
-      </ul>
-    </td>
-    </tr>
-  </tbody>
-</table>
+* Reading properties and nested properties.
+* Formatting data into strings.
+* Collection and Array iterating, applying sub templates to each item.
+* Conditional support, including the ability to call other Java methods that return boolean.
+* Basic math and expression support.
+
+##Reference
+* <a href="http://docs.sencha.com/gxt/3/com/sencha/gxt/core/client/XTemplates.html" target="_target">XTemplates Javadoc</a>
+
+##Example
+Templates are declared by creating an interface that extends XTemplate. 
+Instances can then be created by invoking GWT.create on the template class.
+
+* Example using XTemplates:
+
+```java
+public interface SampleXTemplates extends XTemplates {
+  @XTemplate("<div>Hello, {name}!</div>")
+  SafeHtml hello(String name);
+}
+```
+
+* Instantiating the Template class:
+
+		```java
+		private SampleXTemplates tpl = GWT.create(SampleXTemplates.class);
+		```
+		
+* Example invoking `tpl.hello("test")` would return the SafeHtml instance representing the annotated HTML.
+
+		```html
+		<div>Hello, test!<div>
+		```
+				
+##XTemplate Template Source
+Two methods exist for loading the template source. 
+
+* Example of both methods, using the annotated template source and using the file template source.
+ 
+ 		```java
+		public interface SampleXTemplates extends XTemplates {
+		  // Specifying the template source directly in the annotation. 
+		  @XTemplate("<div>Hello, {name}!</div>")
+		  SafeHtml hello(String name);
+		  
+		  // Specifying the template source as an external file.
+		  @XTemplate(source = "hello.html")
+		  SafeHtml helloExternal(String name);
+		}
+		```
+
+* Example using the templates in the application.
+
+		```java
+		public void displayTemplates() {
+		  SampleXTemplates tpl = GWT.create(SampleXTemplates.class);
+		  
+		  // Example using the template source in the annotation.
+		  // Displays: 'Hello, Fred!'
+		  RootPanel.get().add(new HTML(tpl.hello("Fred")));
+		  
+		  // Example using the template source in the file.
+		  // Displays: 'Hello, Willma!'
+		  RootPanel.get().add(new HTML(tpl.helloExternal("Willma")));
+		}
+		```
 
 
-##Maven Configuration
+##XTemplate Source Variables
+Passing data to the templates using method variables.
+ 
+* The variable data types can be of any data type, from String, primitives and objects. 
+* Variables referencing the object's variables instances is done using bean getter naming conventions.   
 
-* How to setup the plugin with **any** Google App Engine version.
+###String and Primitives Variables
+Passing data to the template via a `String` variable. 
 
-  ```xml
-  <properties>
-      <!-- GAE Plugin -->
-      <gae.version>1.7.6</gae.version>
-      <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-      <gae.home>${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}</gae.home>
-  </properties>
+* Variables are defined by surrounding a name with curly braces like `{variable}`:
+
+		```java
+		public interface SampleXTemplates extends XTemplates {
+	      // Using a String variable
+		  @XTemplate("<div>Hello, {name}!</div>")
+		  SafeHtml hello(String name);
+		}
+		```
+
+###Objects in XTemplate Method Signatures
+XTemplates can reference the object's instance variables. 
+For example in the `Person` object the name and age data members are provided and are referenced with 
+template variables like `{name}` and `{age}`. The variable names follow the bean getter naming convention.   
+
+* Example of a `Person` object which is used in the XTemplate method signature below.  		
+
+		```java
+		public class Person {
+		  private String name;
+		  private int age;
+		  public Person(String name, int age) {
+		    this.name = name;
+		    this.age = age;
+		  }
+		  public String getName() {
+		    return name;
+		  }
+		  public int getAge() {
+		    return age;
+		  }
+		}
+		```
+
+*  Setting up the XTemplates method `hello(Person person)` with `Person` in the method signature and then in the
+ XTemplate source add the `Person` XTemplate variable references to `{name}` and `{age}`.  
+
+		```java
+		public interface SampleXTemplates extends XTemplates {
+		  // Providing person instance to the XTemplate method.
+		  // {name} uses Person.getName();
+		  // {age} uses Person.getAge();
+		  @XTemplate("<div>Hello, {name}! Is your age {age}?</div>")
+		  SafeHtml hello(Person person);
+		}```
+	
+* Using the XTemplate method `hello(person)` in the application example:
+
+		```java
+		public void displayTemplates() {
+		  SampleXTemplates tpl = GWT.create(SampleXTemplates.class);
+		  
+		  // Displays: 'Hello, Barney! Is your age 34?'
+    	  Person barney = new Person("Barney", 34);
+    	  RootPanel.get().add(new HTML(tpl.hello(barney)));
+		}
+		```
+
+###XTemplate Variable Referencing, Objects in Objects
+When referencing the object provided in the XTemplate method signature 
+and that object data member is an object with more data member variables then 
+a path to the deeper instance variable will be needed to be given in the XTemplate source variables.
+
+*  Example of a `Person` object used in the XTemplate method signature. Notice the `private Person father` and `public Person getFather() {...`.
+
+		```java
+		public class Person {
+		  private String name;
+		  private int age;
+		  private Person father;
+		  public Person(Person father, String name, int age) {
+		    this.father = father;
+		    this.name = name;
+		    this.age = age;
+		  }
+		  public String getName() {
+		    return name;
+		  }
+		  public int getAge() {
+		    return age;
+		  }
+		  public Person getFather() {
+		    return father;
+		  }
+		}
+		```
+
+* When the XTemplate is used, `father.name` path uses the `father.getName()` to replace XTemplate source variabel `{father.name}` 
+with the `Person.father.name` instance variable.
   
-  <plugin>
-      <groupId>net.kindleit</groupId>
-      <artifactId>maven-gae-plugin</artifactId>
-      <version>9.5</version>
-      <configuration>
-          <unpackVersion>${gae.version}</unpackVersion>
-          <serverId>appengine.google.com</serverId>
-          <appDir>${webappDirectory}</appDir>
-          
-          <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
-          <serverId>appengine-credentials</serverId>
-          <splitJars>true</splitJars>
-      </configuration>
-      <dependencies>
-          <!-- Google App Engine API -->
-          <dependency>
-              <groupId>com.google.appengine</groupId>
-              <artifactId>appengine-api-1.0-sdk</artifactId>
-              <version>${gae.version}</version>
-          </dependency>
-          <!-- Google App Engine Runtime Dependencies -->
-          <dependency>
-              <groupId>org.apache.geronimo.specs</groupId>
-              <artifactId>geronimo-jta_1.1_spec</artifactId>
-              <version>1.1.1</version>
-              <scope>runtime</scope>
-          </dependency>
-          <dependency>
-              <groupId>org.apache.geronimo.specs</groupId>
-              <artifactId>geronimo-jpa_3.0_spec</artifactId>
-              <version>1.1.1</version>
-              <scope>runtime</scope>
-          </dependency>
-          <dependency>
-              <groupId>javax.jdo</groupId>
-              <artifactId>jdo2-api</artifactId>
-              <version>2.3-eb</version>
-              <scope>runtime</scope>
-          </dependency>
-          <dependency>
-              <groupId>org.datanucleus</groupId>
-              <artifactId>datanucleus-core</artifactId>
-              <version>1.1.5</version>
-          </dependency>
-          <dependency>
-              <groupId>com.google.appengine.orm</groupId>
-              <artifactId>datanucleus-appengine</artifactId>
-              <version>1.0.10</version>
-              <scope>runtime</scope>
-          </dependency>
-          <dependency>
-              <groupId>org.datanucleus</groupId>
-              <artifactId>datanucleus-jpa</artifactId>
-              <version>1.1.5</version>
-              <scope>runtime</scope>
-          </dependency>
-          <!-- App Engine Runtime Dependencies -->
-          <dependency>
-              <groupId>com.google.appengine</groupId>
-              <artifactId>appengine-tools-sdk</artifactId>
-              <version>${gae.version}</version>
-          </dependency>
-      </dependencies>
-  </plugin>
-  ```
-
-* How to setup the plugin using this maven plugin GAE runtime.  
-
-  ```xml
-  <properties>
-       <gae.version>1.7.6</gae.version>
-       <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-       <gae.home>
-           ${settings.localRepository}/com/google/appengine/appengine-java-sdk/${gae.version}/appengine-java-sdk-${gae.version}
-       </gae.home>
-  <propertiess>
+  		```java
+		public interface SampleXTemplates extends XTemplates {
+		  // Providing person instance to the XTemplate method.
+		  // {name} uses Person.getName();
+		  // {age} uses Person.getAge();
+		  // {father.name} uses Person.getFather().getName();
+		  @XTemplate("<div>Hello, {name}! Is your age {age}? {name}&lsquo;s father is {father.name}.</div>")
+		  SafeHtml hello(Person person);
+		}
+		```
   
-  <plugin>
-      <groupId>net.kindleit</groupId>
-      <artifactId>maven-gae-plugin</artifactId>
-      <version>0.9.5</version>
-      <configuration>
-          <sdkDir>${gae.home}</sdkDir>
-              <!-- Add credentials to ~/.m2/settings.xml <id>appengine-credentials</id> -->
-              <serverId>appengine-credentials</serverId>
-              <splitJars>true</splitJars>
-          </configuration>
-          <executions>
-              <execution>
-                  <id>install-server-jar</id>
-                  <phase>validate</phase>
-                  <goals>
-                      <goal>unpack</goal>
-                  </goals>
-              </execution>
-              <execution>
-                  <id>deploy</id>
-                  <goals>
-                      <goal>deploy</goal>
-                  </goals>
-              </execution>
-          </executions>
-      </plugin>
-  ```
+* Using the XTemplate method `hello(person)` in the application example:
+
+		```java
+		public void displayTemplates() {
+		  SampleXTemplates tpl = GWT.create(SampleXTemplates.class);
+		   
+		  // Displays: 'Hello, Barney! Is your age 34?'
+		  Person father = new Person(null, "Bob", 61);
+		  Person barney = new Person(father, "Barney", 34);
+		  RootPanel.get().add(new HTML(tpl.hello(barney)));
+		}
+		```
+
+####XTemplate Variable Referencing, Deeper Object Graph Paths
+XTeamplate can reach deeper into the Object graph by using deeper source paths to reference any of the 
+Object instance variables. 
+
+* For instance having these classes below representing the `Person` object graph.
+
+		```java
+		public class Person {
+		  private String name;
+		  private int age;
+		  private Person father;
+		  private Book favoriteBook;
+		  public Person(Person father, String name, int age, Book favoriteBook) {
+		    this.father = father;
+		    this.name = name;
+		    this.age = age;
+		    this.favoriteBook = favoriteBook;
+		  }
+		  public String getName() {
+		    return name;
+		  }
+		  public int getAge() {
+		    return age;
+		  }
+		  public Person getFather() {
+		    return father;
+		  }
+		  public Book getFavoriteBook() {
+		    return favoriteBook;
+		  }
+		}
+		
+		public class Book {
+		  private String title;
+		  private Recommendation recommendation;
+		  public Book(String title, Recommendation recommendation) {
+		    this.title = title;
+		    this.recommendation = recommendation;
+		  }
+		  public String getTitle() {
+		    return title;
+		  }
+		  public Recommendation getRecommendation() {
+		    return recommendation;
+		  }
+		}
+		
+		public class Recommendation {
+		  private String message;
+		  public Recommendation(String message) {
+		    this.message = message;
+		  }
+		  public String getMessage() {
+		    return message;
+		  }
+		}
+		```
+		
+* Building on the earlier examples of path reference, `{favoriteBook.recommendation.message}` references a 
+deeper object in the graph. Or you could say `{favoriteBook.recommendation.message}` uses `Person.getFavoriteBook().getRecommendation.getMessage()`.
+
+		```java
+		public interface SampleXTemplates extends XTemplates {
+		  // Providing person instance to the XTemplate method.
+		  // {name} uses Person.getName();
+		  // {age} uses Person.getAge();
+		  // {father.name} uses Person.getFather().getName();
+		  // {favoriteBook.title} uses Person.getFavoriteBook().getTitle();
+		  // {favoriteBook.recommendation.message} uses Person.getFavoriteBook().getRecommendation.getMessage();
+		  @XTemplate("<div>Hello, {name}! Is your age {age}? " +
+		  		"{name}&lsquo;s father is {father.name}. " +
+		  		"My favorite book is {favoriteBook.title} and " +
+		  		"has recommendation: {favoriteBook.recommendation.message}</div>")
+		  SafeHtml hello(Person person);
+		}
+		```
+
+* Using the XTemplate method `hello(person)` in the application example:
+
+		```java
+		public void displayTemplates() {
+		  SampleXTemplates tpl = GWT.create(SampleXTemplates.class);
+		  
+		  // Displays: 'Hello, Barney! Is your age 34? Barney's father is Bob. My favorite book is 
+		  //            Dinosaurs and has recommendation: This book was good.'
+		  Recommendation recommendation = new Recommendation("This book was good.");
+		  Book book = new Book("Dinosaurs", recommendation);
+		  Person father = new Person(null, "Bob", 61, null);
+		  Person barney = new Person(father, "Barney", 34, book);
+		  RootPanel.get().add(new HTML(tpl.hello(barney)));
+		}
+		```
 
 
-##Maven Generated site information
-You can find a copy of the maven generated site information [here](http://www.kindleit.net/maven_gae_plugin/) and [here](http://maven-gae-plugin.github.com/maven-gae-plugin/).
 
 
-##Boilerplate / Archetypes
-[JAppStart](http://code.google.com/p/jappstart) is a very complete jump start for java GAE developers. [Spring Roo](http://www.springsource.org/roo) is also a great tool for setting up all the boilerplate code.
 
-You can also find the following archetypes for your applications:
- * Plain JSP based example: 
+##Common XTemplate Problems
+Since the variable references are strings makes for a few common things going wrong and 
+GXT has good debug logging to help diagnose the issue quickly. 
 
-        mvn archetype:generate -DarchetypeGroupId=net.kindleit -DarchetypeArtifactId=gae-archetype-jsp \
-        -DarchetypeVersion=0.9.4 -DgroupId=com.myapp.test -DartifactId=testapp
+###MisNamed XTemplate Source Variable
+Misnamed variable in the XTemplate source will cause an build error. 
+The screen shot below this demonstrates making the mistake of naming the variable incorrectly in the XTemplate source. 
+The variable was named {book.title} but should have been named {favoriteBook.title}. 
 
- * Wicket based example
+<img src="images/MisNamedVar.png" />
+  
+###No Getter in Object for XTemplate Variable Name
+XTemplates references the Object instance variables through the getters and 
+it follows the beans getter naming convention. 
+The screen shot below this demonstrates a 'no getter' error during the build. 
+In this case, when using `{favoriteBook.recommendation}` looked for the getter method favoriteBook.getRecommendation()
+and it did not exist thus causing the error. 
 
-        mvn archetype:generate -DarchetypeGroupId=net.kindleit -DarchetypeArtifactId=gae-archetype-wicket \
-        -DarchetypeVersion=0.9.4 -DgroupId=com.myapp.test -DartifactId=testapp
-
- * GWT based example
-
-        mvn archetype:generate -DarchetypeGroupId=net.kindleit -DarchetypeArtifactId=gae-archetype-gwt \
-        -DarchetypeVersion=0.9.4 -DgroupId=com.myapp.test -DartifactId=testapp
-
-
- * JSF based example
-
-        mvn archetype:generate -DarchetypeGroupId=net.kindleit -DarchetypeArtifactId=gae-archetype-jsf \
-        -DarchetypeVersion=0.9.4 -DgroupId=com.myapp.test -DartifactId=testapp
+<img src="images/NoGetter.png" /> 
 
 
-##Issues
-Issues are tracked in [github](https://github.com/maven-gae-plugin/maven-gae-plugin/issues).
+ 
