@@ -26,18 +26,18 @@ Sencha Architect is a desktop application that helps you create interfaces faste
 ## Building
 Use this configuration to build and debug.
 
-* Create a working directory for the project:
+### Create a working directory for the project:
 
 	mkdir -p ~/work/repo
 	cd ~/work
 
-Clone the project repositories to architect and architect-binaries directories:
+### Clone the project repositories to architect and architect-binaries directories:
 	
 	* Be sure you're in the directory ~/work
 	* Fork the repos, and those configs will be added later.
 
 	git clone --recursive https://github.com/extjs/SenchaDesigner.git repo/architect
-    git clone https://github.com/extjs/SenchaDesigner-binaries.git repo/architect-binaries
+    	git clone https://github.com/extjs/SenchaDesigner-binaries.git repo/architect-binaries
 
 Checkout the master branch:
 
