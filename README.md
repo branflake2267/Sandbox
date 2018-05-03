@@ -19,9 +19,9 @@ Sencha Architect is a desktop application that helps you create interfaces faste
  * install4j
  * xvfb (just only on headless server)
 
-## Teamcity builds
+## Teamcity
 
-See [Architect project](https://teamcity.sencha.com/project.html?projectId=Architect)
+* See [Architect project](https://teamcity.sencha.com/project.html?projectId=Architect)
 
 ## Building
 Use this configuration to build and debug.
