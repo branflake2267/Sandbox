@@ -26,7 +26,7 @@ Sencha Architect is a desktop application that helps you create interfaces faste
 ## Building
 Use this configuration to build and debug.
 
-Create a working directory for the project:
+* Create a working directory for the project:
 
 	mkdir -p ~/work/repo
 	cd ~/work
