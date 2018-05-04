@@ -80,7 +80,7 @@ export CODE_SIGN_URL_WINDOWS="http://10.106.4.2:8080/sign"
 ```
 
 ### Executable
-Change these f
+Change the file permissions so the sh files are executable.
 
 	chmod +x ~/work/repo/architect/scripts/build/architect.sh build.sh
 
