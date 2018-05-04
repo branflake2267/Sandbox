@@ -87,7 +87,8 @@ Change the file permissions so the sh files are executable.
 ### Create Directories
 Create these folders in the `~/work/assets` folder. 
 
-	mkdir ~/work/assets \
+	cd ~/work
+	mkdir assets \
 	assets/ext42 \
 	assets/ext50 \
 	assets/ext51 \
