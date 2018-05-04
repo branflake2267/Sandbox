@@ -43,7 +43,7 @@ git clone https://github.com/extjs/SenchaDesigner-binaries.git repo/architect-bi
 ### Checkout
 Checkout the github master branch.
 
-	cd repo/architect
+	cd ~/work/repo/architect
 	git checkout 4.x
 
 ### Build Script
