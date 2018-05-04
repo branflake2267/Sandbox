@@ -82,7 +82,7 @@ export CODE_SIGN_URL_WINDOWS="http://10.106.4.2:8080/sign"
 ### Executable
 Change the file permissions so the sh files are executable.
 
-	chmod +x ~/work/repo/architect/scripts/build/architect.sh build.sh
+	chmod +x ~/work/repo/architect/scripts/build/architect.sh ~/work/build.sh
 
 ### Create Directories
 Create these folders in the `~/work/assets` folder. 
