@@ -3,7 +3,7 @@
 Rapidly create rich Ext JS interfaces with Sencha Architect.
 Sencha Architect is a desktop application that helps you create interfaces faster than ever in an easy-to-use, drag-and-drop environment.
 
-## Dependencies
+## Project Dependencies
 
  * electron (private)
  * electron-modules
@@ -23,8 +23,9 @@ Sencha Architect is a desktop application that helps you create interfaces faste
 
 * See [Architect project](https://teamcity.sencha.com/project.html?projectId=Architect)
 
+
 ## Building
-Use this configuration to build and debug.
+Use this configuration to compile the build.
 
 ### Working Directory
 Create the project in the home directory under work.
