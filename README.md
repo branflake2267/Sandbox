@@ -37,8 +37,8 @@ After this configuration is complete, you could rename the `~/work` directory.
 ### Clone
 Clone thsese github projects into `~/work/repo`.
 
-	git clone --recursive https://github.com/extjs/SenchaDesigner.git repo/architect
-	git clone https://github.com/extjs/SenchaDesigner-binaries.git repo/architect-binaries
+	git clone --recursive https://github.com/extjs/SenchaDesigner.git ~/work/repo/architect
+	git clone https://github.com/extjs/SenchaDesigner-binaries.git ~/work/repo/architect-binaries
 
 ### Checkout
 Checkout the github master branch.
