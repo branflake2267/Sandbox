@@ -1,5 +1,4 @@
 # Sencha Architect
-
 Rapidly create rich Ext JS interfaces with Sencha Architect.
 Sencha Architect is a desktop application that helps you create interfaces faster than ever in an easy-to-use, drag-and-drop environment.
 
@@ -21,7 +20,7 @@ Sencha Architect is a desktop application that helps you create interfaces faste
 
 ## Teamcity
 
-* See [Architect project](https://teamcity.sencha.com/project.html?projectId=Architect)
+* [Teamcity Architect Project](https://teamcity.sencha.com/project.html?projectId=Architect)
 
 
 ## Building
