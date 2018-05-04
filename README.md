@@ -121,16 +121,23 @@ Download these dependencies into the` ~/work/assets` directory.
 
 * download [install4j_linux_6_1_5.deb](https://www.ej-technologies.com/download/install4j/files) to ~/Downloads
 
-### Install install4j
-Install install4j and add the sencha license to it. 
+### Install Install4j
+Install Install4j and add the sencha license to it. 
 
-	sudo dpkg -i ~/Downloads/install4j_linux_6_1_5.deb
-	sudo apt-get install -y openjdk-8-jre
-	install4jc -L L-M6-SENCHA#50032550020001-yh3jia2yiz83td#35b8
+* Goto the site and download Install4j https://www.ej-technologies.com/download/install4j/files 
+* Load up the application.
+* Add install4j/bin to the PATH.
+* Old configuration.
+
+		cd ~/Downloads
+		sudo dpkg -i ~/Downloads/install4j_linux_6_1_5.deb
+		sudo apt-get install -y openjdk-8-jre
+		install4jc -L L-M6-SENCHA#50032550020001-yh3jia2yiz83td#35b8
 
 ### Install Dependencies
 Install these dependencies. 
 
+	cd ~
 	sudo apt-get install p7zip-full
 	sudo apt-get install -y ruby
 	sudo gem install sass --version 3.2.13
@@ -147,12 +154,14 @@ Install these dependencies.
 ### Sencha CMD 
 Make sure you have the appropriate version of Sencha Cmd on your path.
 
-    sencha --version
+	cd ~
+	sencha --version
 
 ### Building
 Run the build with `~/work/build.sh`. 
 This will prep for debugging. 
 
+	cd ~/work
 	./build.sh
 
 
@@ -169,6 +178,7 @@ Add electron to the path
 	PATH="$PATH:[replace this with ~]/work/assets/electron-binaries/electron"
 	
 ### Running Debugging
+This will launch the electron application.
 
 	cd ~/work/assets/electron-binaries/electron
 	electron .
