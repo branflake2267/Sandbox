@@ -27,26 +27,26 @@ Sencha Architect is a desktop application that helps you create interfaces faste
 Use this configuration to build and debug.
 
 ### Working Directory
+Create the project in the home directory under work.
+After this configuration is complete, you could rename the `~/work` directory.
 
 	mkdir -p ~/work/repo
 	cd ~/work
 
 ### Clone
+Clone thsese github projects into `~/work/repo`.
 
 git clone --recursive https://github.com/extjs/SenchaDesigner.git repo/architect
 git clone https://github.com/extjs/SenchaDesigner-binaries.git repo/architect-binaries
 
-* Be sure you're in the directory ~/work
-* Fork the repos, and those configs will be added later.
-
 ### Checkout
+Checkout the github master branch.
 
 	cd repo/architect
 	git checkout 4.x
 
-## Build Script
-
-	* Architect 4.2.0.666 with electron 1.6.2
+### Build Script
+Build for Architect 4.2.0.666 with electron 1.6.2
 
 	touch ~/work/build.sh
 	gedit ~/work/build.sh
@@ -54,6 +54,7 @@ git clone https://github.com/extjs/SenchaDesigner-binaries.git repo/architect-bi
 ```
 #!/bin/sh
 # ~/work/build.sh
+# Debugging version below.
 
 export ASAR_ENCRYPT="false"
 export ASSETS_BUILD_ALWAYS="false"
@@ -77,15 +78,27 @@ export CODE_SIGN_URL_WINDOWS="http://10.106.4.2:8080/sign"
 ./repo/architect/scripts/build/architect.sh
 ```
 
-Add executable flags:
+### Executable
+Change these f
 
-	chmod +x repo/architect/scripts/build/architect.sh build.sh
+	chmod +x ~/work/repo/architect/scripts/build/architect.sh build.sh
 
-Create a directory for assets:
+### Create Directories
+Create these folders in the `~/work/assets` folder. 
 
-	mkdir assets assets/ext42 assets/ext50 assets/ext51 assets/ext60 assets/ext62 assets/ext65 assets/cmd assets/electron-modules assets/electron-binaries
+	mkdir ~/work/assets \
+	assets/ext42 \
+	assets/ext50 \
+	assets/ext51 \
+	assets/ext60 \
+	assets/ext62 \
+	assets/ext65 \
+	assets/cmd \
+	assets/electron-modules \
+	assets/electron-binaries
 
-Download build dependencies:
+### Downloads
+Download these dependencies into the` ~/work/assets` directory.
 
 * download [ext-4.2.1-commercial.zip](https://teamcity.sencha.com/viewLog.html?buildId=170781&buildTypeId=bt160&tab=artifacts) to assets/ext42
 * download [ext-5.0.1-commercial.zip](https://teamcity.sencha.com/viewLog.html?buildId=223462&buildTypeId=Sencha5_50Distribution&tab=artifacts#!epgs1v7r4o) to assets/ext50
@@ -106,13 +119,15 @@ Download build dependencies:
 
 * download [install4j_linux_6_1_5.deb](https://www.ej-technologies.com/download/install4j/files) to ~/Downloads
 
-Install install4j with Sencha build licence:
+### Install install4j
+Install install4j and add the sencha license to it. 
 
 	sudo dpkg -i ~/Downloads/install4j_linux_6_1_5.deb
 	sudo apt-get install -y openjdk-8-jre
 	install4jc -L L-M6-SENCHA#50032550020001-yh3jia2yiz83td#35b8
 
-Install dependencies:
+### Install Dependencies
+Install these dependencies. 
 
 	sudo apt-get install p7zip-full
 	sudo apt-get install -y ruby
@@ -127,13 +142,32 @@ Install dependencies:
 	sudo npm install -g asar
 	sudo npm install -g electron-packager
 
-Make sure you have the appropriate version of Sencha Cmd on your path:
+### Sencha CMD 
+Make sure you have the appropriate version of Sencha Cmd on your path.
 
     sencha --version
 
-### Running
-
-Run the build:
+### Building
+Run the build with `~/work/build.sh`. 
+This will prep for debugging. 
 
 	./build.sh
+
+
+## Debugging
+
+### Build
+Start with building it first. 
+
+### Electron Path
+Add electron to the path
+
+	# ~/.profile
+	# PATH="$PATH:/home/parallels/work/assets/electron-binaries/electron" # <- example
+	PATH="$PATH:[replace this with ~]/work/assets/electron-binaries/electron"
+	
+### Running Debugging
+
+	cd ~/work/assets/electron-binaries/electron
+	electron .
 
